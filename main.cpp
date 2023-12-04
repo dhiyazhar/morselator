@@ -1,15 +1,16 @@
 #include <bits/stdc++.h>
 #include "translator.hpp"
+#include "page.hpp"
 using namespace std;
 
-int main() {
+int main(){
 
-    string morse;
+    open_page();
+    // string morse;
     // getline(cin, kata);
-    getline(cin, morse);
+    // getline(cin, morse);
 
-    morse_to_text(&morse[0]);
-    // text_to_morse(kata);
+    // morse_to_text(&morse[0]);
 
     return 0;
     
