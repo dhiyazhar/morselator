@@ -4,10 +4,12 @@ using namespace std;
 
 int main() {
 
-    string kata;
-    getline(cin, kata);
+    string morse;
+    // getline(cin, kata);
+    getline(cin, morse);
 
-    text_to_morse(kata);
+    morse_to_text(&morse[0]);
+    // text_to_morse(kata);
 
     return 0;
     

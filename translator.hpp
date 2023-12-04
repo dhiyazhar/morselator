@@ -6,7 +6,7 @@ using namespace std;
 struct MorseCode {
 
     char huruf;
-    string kode;
+    char* kode;
 
 };
 
@@ -38,7 +38,7 @@ MorseCode alphabet[] {
         {'X', "-.--"},
         {'Y', "-.--"},
         {'Z', "--.."},
-        {' ', " "},  // spasi
+        {' ', "/"},  // spasi
         {'0', "-----"},
         {'1', ".----"},
         {'2', "..---"},
@@ -51,12 +51,22 @@ MorseCode alphabet[] {
         {'9', "----."}
 
 };
-void text_to_morse(string kata){
+
+void text_to_morse(char* kata){
 	for(char word: kata){
 		for(int i = 0; i < 37; i++){
-			if(word == alphabet[i].huruf){
+			if(toupper(word) == alphabet[i].huruf){
 				cout << alphabet[i].kode << ' ';
 			}
 		}
 	}
+}
+
+void morse_to_text(char* morse){
+
+    char* token = strtok(morse, " ");
+
+    for(string sub_morse: token){
+        cout << sub_morse << ' ';
+    }
 }
