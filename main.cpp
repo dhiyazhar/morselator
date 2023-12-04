@@ -5,12 +5,11 @@ using namespace std;
 
 int main(){
 
-    open_page();
-    // string morse;
+    string morse;
     // getline(cin, kata);
-    // getline(cin, morse);
+    getline(cin, morse);
 
-    // morse_to_text(&morse[0]);
+    morse_to_text(&morse[0]);
 
     return 0;
     
