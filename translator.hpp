@@ -66,7 +66,11 @@ void morse_to_text(char* morse){
 
     char* token = strtok(morse, " ");
     while(token != NULL){
-        cout << token << endl;
+        for(int i = 0; i < 37; i++){
+            if(strcmp(token, alphabet[i].kode)){
+                cout << alphabet[i].huruf << ' ';
+            }
+        }
         token = strtok(NULL, " ");
     }
 }
