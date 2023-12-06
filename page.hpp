@@ -17,7 +17,7 @@ void page_translate(){
 	cout << "|            MORSELATOR              |" << endl;
 	cout << "======================================" << endl;
     cout << "" << endl;
-    cout << "        Pilih Mode Translate           " << endl;
-    cout << "         1. Teks  ---> Morse          " << endl;
+    cout << "        Pilih Mode Translate :        " << endl;
+    cout << "\n      	 1. Teks  ---> Morse          " << endl;
     cout << "         2. Morse ---> Teks           " << endl;
 }
