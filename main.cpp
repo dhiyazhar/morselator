@@ -5,7 +5,8 @@ using namespace std;
 
 int main(){
 
-    page_translate();
+    open_page();
+    if 
 
     return 0;
     

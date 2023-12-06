@@ -8,7 +8,6 @@ void open_page(){
 	cout << "" << endl;
 	cout << "1. Translate" << endl;
 	cout << "2. History" << endl;
-	
 }
 
 void page_translate(){
@@ -20,4 +19,15 @@ void page_translate(){
     cout << "        Pilih Mode Translate :        " << endl;
     cout << "\n      	 1. Teks  ---> Morse          " << endl;
     cout << "         2. Morse ---> Teks           " << endl;
+}
+
+void history(){
+	cout << 
+}
+void morselator(int i){
+	
+}
+
+void page_text_to_morse(){
+	cout << 
 }
