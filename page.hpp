@@ -2,6 +2,8 @@
 using namespace std;
 
 // main menu
+void morselator(int option);
+
 void open_page(){
 	cout << "======================================" << endl;
 	cout << "|              MORSELATOR            |" << endl;
@@ -14,6 +16,8 @@ void open_page(){
 	cout << endl;
 
 	int option;
+
+	cout << "Masukkan pilihan anda: ";
 	cin >> option;
 	morselator(option);
 }
@@ -64,7 +68,11 @@ void morselator(int i){
 		history_page();
 	}
 	else{
-		cout << "pilihan tidak ada, harap ulangi pilihan anda";
+		cout << "pilihan tidak ada, harap ulangi pilihan anda" << endl << endl;
+		cout << "press any key to continue...";
+		cin.get();
+		cin.get();
+		cout << endl;
 		open_page();
 	}
 }
