@@ -1,0 +1,14 @@
+Teks  : uuuu
+Morse : hhhh
+
+Teks  : uuuu
+Morse : hhhh
+
+Fri Dec 08 10:55:12 2023
+Teks  : dfghjrtyui
+Morse : dfghjkadsff
+
+Fri Dec 08 10:55:27 2023
+Morse : dfghjkadsff
+Teks  : dfghjrtyui
+

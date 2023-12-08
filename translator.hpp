@@ -52,25 +52,34 @@ MorseCode alphabet[] {
 
 };
 
-void text_to_morse(string kata){
+string text_to_morse(string kata){
+    string result;
+
 	for(char word: kata){
 		for(int i = 0; i < 37; i++){
 			if(toupper(word) == alphabet[i].huruf){
-				cout << alphabet[i].kode << ' ';
+				result += alphabet[i].kode;
+                result += ' ';
 			}
 		}
+
 	}
+
+    return result;
 }
 
-void morse_to_text(char* morse){
+string morse_to_text(string morse){
+    string result;
 
-    char* token = strtok(morse, " ");
+    char* token = strtok(&morse[0], " ");
     while(token != NULL){
         for(int i = 0; i < 37; i++){
             if(strcmp(token, alphabet[i].kode) == 0){
-                cout << alphabet[i].huruf << ' ';
+                result += alphabet[i].huruf;
             }
         }
         token = strtok(NULL, " ");
     }
+
+    return result;
 }
