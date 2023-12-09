@@ -1,15 +1,8 @@
-Teks  : uuuu
-Morse : hhhh
+Sat Dec 09 19:59:52 2023
+Teks  : haha
+Morse : .... .- .... .- 
 
-Teks  : uuuu
-Morse : hhhh
+Sat Dec 09 20:00:10 2023
+Morse : .-
+Teks  : A
 
-Fri Dec 08 10:55:12 2023
-Teks  : dfghjrtyui
-Morse : dfghjkadsff
-
-Fri Dec 08 10:55:27 2023
-Morse : dfghjkadsff
-Teks  : dfghjrtyui
-
-Fri Dec 08 11:15:56 2023
