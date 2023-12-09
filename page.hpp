@@ -15,7 +15,7 @@ void printascii(){
 	infile.open("art_ascii.txt");
 	if(infile.is_open()){
 		while(getline(infile,line)){
-			cout << line[1] << endl;
+			cout << line << endl;
 		}
 	}
 	else{
