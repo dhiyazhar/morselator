@@ -55,7 +55,9 @@ void translate_page(){
     cout << endl;
     cout << "        Pilih Mode Translate :        " << endl << endl;
     cout << "      	  1. Teks  ---> Morse          " << endl;
-    cout << "         2. Morse ---> Teks           " << endl;
+    cout << "          2. Morse ---> Teks           " << endl;
+	cout << endl;
+	cout << "      	  3. Menu Awal          " << endl;
     cout << endl;
 
     int option;
@@ -71,6 +73,9 @@ void translate(int i){
 	}
 	else if(i == 2){
 		morse_to_text_page();
+	}
+	else if(i = 'q') {
+		open_page();
 	}
 	else{
 		cout << "Pilihan tidak ada, harap ulangi pilihan anda" << endl << endl;
@@ -100,7 +105,8 @@ void history_body(){
 		cout << content << endl;
 	}
 
-	cout << "ingin menghapus histori ? y[ya] | n[kembali ke menu awal] : ";
+	cout << "HAPUS HISTORI?" << endl;
+	cout << "y [ya] | n [kembali ke menu awal] : ";
 	cin >> option;
 
 	if(option == 'y'){
