@@ -52,34 +52,27 @@ MorseCode alphabet[] {
 
 };
 
-string text_to_morse(string kata){
-    string result;
-
-	for(char word: kata){
-		for(int i = 0; i < 37; i++){
-			if(toupper(word) == alphabet[i].huruf){
-				result += alphabet[i].kode;
-                result += ' ';
-			}
-		}
-
-	}
-
-    return result;
-}
-
-string morse_to_text(string morse){
-    string result;
-
-    char* token = strtok(&morse[0], " ");
-    while(token != NULL){
-        for(int i = 0; i < 37; i++){
-            if(strcmp(token, alphabet[i].kode) == 0){
-                result += alphabet[i].huruf;
-            }
+string text_to_morse(string kata, int index = 0){
+	if(index >= kata.length()){
+        return "";
+    }
+    for(int i = 0; i < 37; i++){
+        if(toupper(kata[index]) == alphabet[i].huruf){
+            string kode(alphabet[i].kode);
+            return kode + " " + text_to_morse(kata, index+1);
         }
-        token = strtok(NULL, " ");
     }
 
-    return result;
+}
+
+string morse_to_text(string morse, char* token){
+    if(token == NULL){
+        return "";
+    }
+    
+    for(int i = 0; i < 37; i++){
+        if(strcmp(token, alphabet[i].kode) == 0){
+            return alphabet[i].huruf + morse_to_text(morse, strtok(NULL, " "));
+        }
+    }
 }

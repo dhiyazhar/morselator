@@ -9,8 +9,25 @@ void translate(int i);
 void morse_to_text_page();
 void text_to_morse_page();
 
+void printascii(){
+	string line = "";
+	ifstream infile;
+	infile.open("art_ascii.txt");
+	if(infile.is_open()){
+		while(getline(infile,line)){
+			cout << line[1] << endl;
+		}
+	}
+	else{
+		cout << "File Failed To Load." << endl;
+	}
+	infile.close();
+}
+
 void open_page(){
 	system("cls");
+	printascii();
+	cout << endl << endl;
 	cout << "======================================" << endl;
 	cout << "|         SELAMAT DATANG DI          |" << endl;
 	cout << "|            MORSELATOR              |" << endl;
@@ -172,7 +189,7 @@ void morse_to_text_page(){
 	getline(cin, morse);
 	cout << endl;
 
-	teks = morse_to_text(morse);
+	teks = morse_to_text(morse, strtok(&morse[0], " "));
 
 	cout << "Hasil translate : " << teks << endl;
 
