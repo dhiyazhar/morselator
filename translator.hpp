@@ -69,8 +69,8 @@ string morse_to_text(string morse, char* token){
     if(token == NULL){
         return "";
     }
-    
-    for(int i = 0; i < 37; i++){
+
+    for(int i = 0; i < 37; i++){    
         if(strcmp(token, alphabet[i].kode) == 0){
             return alphabet[i].huruf + morse_to_text(morse, strtok(NULL, " "));
         }

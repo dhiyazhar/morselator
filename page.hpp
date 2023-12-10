@@ -4,29 +4,54 @@
 using namespace std;
 
 // main menu
-void morselator(int option);
+void morselator(char option);
 void translate(int i);
 void morse_to_text_page();
 void text_to_morse_page();
+void open_page();
+void loading();
 
 void printascii(){
+	int i = 0;
+
+	start:
+	system("cls");
+
 	string line = "";
 	ifstream infile;
 	infile.open("art_ascii.txt");
 	if(infile.is_open()){
 		while(getline(infile,line)){
-			cout << line[1] << endl;
+			cout << line << endl;
 		}
 	}
 	else{
 		cout << "File Failed To Load." << endl;
 	}
 	infile.close();
+
+	cout << "Tekan apapun untuk lanjut... ";
+	
+	if(i == 0){
+		cin.get();
+	}
+	
+	cout << i << '%';
+	if(i < 1){
+		i++;
+	}else{
+		i += i;
+	}
+
+	if(i <= 100){
+		goto start;
+	}
+
+	open_page();
 }
 
 void open_page(){
 	system("cls");
-	printascii();
 	cout << endl << endl;
 	cout << "======================================" << endl;
 	cout << "|         SELAMAT DATANG DI          |" << endl;
@@ -39,7 +64,7 @@ void open_page(){
 	cout << "0. Exit" << endl;
 	cout << endl;
 
-	int option;
+	char option;
 
 	cout << "Masukkan pilihan anda: ";
 	cin >> option;
@@ -117,14 +142,14 @@ void history_page(){
 } // history menu end
 
 
-void morselator(int option){
-	if(option == 0){
+void morselator(char option){
+	if(option == '0'){
 		return;
 	}
-	else if(option == 1){
+	else if(option == '1'){
 		translate_page();
 	}
-	else if(option == 2){
+	else if(option == '2'){
 		history_page();
 	}
 	else{
@@ -166,9 +191,9 @@ void text_to_morse_page(){
 
 	if(option == 'n'){
 		open_page();
+	}else{
+		translate_page();
 	}
-
-	translate_page();
 }
 
 void morse_to_text_page(){
@@ -200,7 +225,7 @@ void morse_to_text_page(){
 
 	if(option == 'n'){
 		open_page();
+	}else{
+		translate_page();
 	}
-
-	translate_page();
 }

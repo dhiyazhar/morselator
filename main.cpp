@@ -3,10 +3,8 @@
 using namespace std;
 
 int main(){
-
-    system("cls");
-
-    open_page();
+    
+    printascii();
 
     return 0;
 }
