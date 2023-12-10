@@ -1,6 +1,7 @@
 #include <iostream>
 #include "history.hpp"
 #include "translator.hpp"
+#include <windows.h>
 using namespace std;
 
 // main menu
@@ -37,11 +38,9 @@ void printascii(){
 	}
 	
 	cout << i << '%';
-	if(i < 1){
-		i++;
-	}else{
-		i += i;
-	}
+
+	Sleep(20);
+	i++;
 
 	if(i <= 100){
 		goto start;
@@ -180,7 +179,7 @@ void text_to_morse_page(){
 	cout << "|          Teks   --->   Morse       |" << endl;
 	cout << "======================================" << endl;
 	cout << endl;
-	coccut << "Masukkan Teks : ";
+	cout << "Masukkan Teks : ";
 
 	cin.ignore();
 	getline(cin, teks);
@@ -188,18 +187,26 @@ void text_to_morse_page(){
 
 	morse = text_to_morse(teks);
 
-	cout << "Hasil translate : " << "\" " << morse << '\"' << endl;
+	if(morse == " "){
+		cout << "Input harus berupa huruf atau angka." << endl;
+		cout << "Tekan apapun untuk kembali...";
+		cin.get();
 
-	cout << "y = lanjut translate | n = kembali ke menu awal :";
-	cin >> option;
-
-	add_history(1, morse, teks);
-
-	if(option == 'n'){
-		open_page();
-	}else{
 		translate_page();
-	}
+	}else{
+		cout << "Hasil translate : " << "\" " << morse << " \"" << endl;
+
+		cout << "y = lanjut translate | n = kembali ke menu awal :";
+		cin >> option;
+
+		add_history(1, morse, teks);
+
+		if(option == 'n'){
+			open_page();
+		}else{
+			translate_page();
+		}
+	}	
 }
 
 void morse_to_text_page(){
@@ -222,16 +229,24 @@ void morse_to_text_page(){
 
 	teks = morse_to_text(morse, strtok(&morse[0], " "));
 
-	cout << "Hasil translate : " << teks << endl;
+	if(teks == " "){
+		cout << "Kode morse tidak valid atau tidak terdapat dalam kamus." << endl;
+		cout << "Tekan apapun untuk kembali...";
+		cin.get();
 
-	cout << "y = lanjut translate | n = kembali ke menu awal :";
-	cin >> option;
-
-	add_history(2, morse, teks);
-
-	if(option == 'n'){
-		open_page();
-	}else{
 		translate_page();
-	}
+	}else{
+		cout << "Hasil translate : " << teks << endl;
+
+		cout << "y = lanjut translate | n = kembali ke menu awal :";
+		cin >> option;
+
+		add_history(2, morse, teks);
+
+		if(option == 'n'){
+			open_page();
+		}else{
+			translate_page();
+		}
+	}	
 }
