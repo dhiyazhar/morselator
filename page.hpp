@@ -180,7 +180,7 @@ void text_to_morse_page(){
 	cout << "|          Teks   --->   Morse       |" << endl;
 	cout << "======================================" << endl;
 	cout << endl;
-	cout << "Masukkan Teks : ";
+	coccut << "Masukkan Teks : ";
 
 	cin.ignore();
 	getline(cin, teks);
