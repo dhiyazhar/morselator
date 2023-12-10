@@ -57,12 +57,14 @@ string text_to_morse(string kata, int index = 0){
         return "";
     }
     for(int i = 0; i < 37; i++){
+        count += 1;
         if(toupper(kata[index]) == alphabet[i].huruf){
             string kode(alphabet[i].kode);
             return kode + " " + text_to_morse(kata, index+1);
         }
     }
 
+    return "ulangi input";
 }
 
 string morse_to_text(string morse, char* token){
